@@ -1,0 +1,23 @@
+services:
+  nginx:
+    build: .
+    container_name: cv-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - certbot-conf:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    restart: unless-stopped
+    networks:
+      - cv-network
+
+volumes:
+  certbot-conf:
+  certbot-www:
+
+networks:
+  cv-network:
+    driver: bridge
