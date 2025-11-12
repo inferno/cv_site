@@ -2,8 +2,8 @@
 .gitignore
 .DS_Store
 *.md
+!README.md
 node_modules
 .env
 docker-compose.yml
-Dockerfile
-nginx/
+certbot/

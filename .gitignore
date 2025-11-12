@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Let's Encrypt certificates
+certbot/
+
+# Logs
+*.log
