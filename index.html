@@ -374,7 +374,18 @@
         // Добавляем класс и наблюдаем за секциями и карточками опыта
         document.querySelectorAll('.section, .experience-item').forEach(el => {
             el.classList.add('animate-on-scroll');
-            observer.observe(el);
+
+            // Проверяем, виден ли элемент при загрузке
+            const rect = el.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (isVisible) {
+                // Элемент уже в viewport - показываем сразу
+                el.classList.add('animated');
+            } else {
+                // Элемент не виден - наблюдаем за ним
+                observer.observe(el);
+            }
         });
 
     </script>
