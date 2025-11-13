@@ -869,7 +869,7 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .resume-container {
         margin: 20px auto;
         padding: 0 15px;
@@ -904,6 +904,11 @@ a {
 
     .education-item {
         padding: 16px;
+    }
+
+    /* Скрыть кнопки на мобильных устройствах */
+    .header-actions {
+        display: none;
     }
 }
 
