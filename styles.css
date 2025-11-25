@@ -712,7 +712,6 @@ a {
     font-size: 15px;
     line-height: 1.85;
     margin-bottom: var(--spacing-md);
-    text-align: justify;
     font-weight: 400;
     letter-spacing: 0.1px;
 }
@@ -917,18 +916,23 @@ a {
 }
 
 @media (max-width: 768px) {
+    body {
+        background: var(--bg-card);
+    }
+
     .resume-container {
-        margin: 20px auto;
-        padding: 0 15px;
+        margin: 0;
+        padding: 0;
     }
 
     .resume-wrapper {
-        border-radius: var(--radius-lg);
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .left-column,
     .right-column {
-        padding: 35px 25px;
+        padding: 30px 20px;
     }
 
     .name {
@@ -953,8 +957,9 @@ a {
         padding: 16px;
     }
 
-    /* Скрыть кнопки на мобильных устройствах */
-    .header-actions {
+    /* Скрыть кнопки и разделитель на мобильных устройствах */
+    .header-actions,
+    .divider {
         display: none;
     }
 }
